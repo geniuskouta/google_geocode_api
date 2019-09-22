@@ -11,7 +11,7 @@ async function geocode(e){
     const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
         params:{
             address: location,
-            key: 'AIzaSyDVvQRF9gTPMVHOKVWWRxOD9OSZ_ByO-IQ'
+            key: '#yourapikey'
         }
     });
         //formatted address
