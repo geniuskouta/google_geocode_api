@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="api.js"></script>
+    <title>Geocode app</title>
+</head>
+<body>
+    <div class="container">
+    <div class="card-body" id="userInfo">
+        </div>
+        <div class="card-body" id="geometry"></div>
+        <div class="card-body" id="address-components"></div>
+        <div class="card-body" id="result-distance"></div>
+        <h2 id="text-center">Enter Location: </h2>
+        <div class="card-body">
+        <form id="location-form">
+            <input type ="text" id="location-input" class="form-control form-control-lg">
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+        </div>
+        <div class=card-body>
+        <button onclick="result();" class="btn btn-primary">Get distance</button>
+        </div>
+    </div>
+
+
+    <script>
+        let locationForm = document.getElementById('location-form');
+        locationForm.addEventListener('submit', geocode);
+
+        //get user latitude & longtitude
+        window.onload = async function() {
+            getUserInfo();
+        };
+        function result(){
+            distance("K");
+        };
+    </script>
+</body>
+</html>
